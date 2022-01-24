@@ -24,3 +24,5 @@ jobs:
         logout: true
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag selamanse/xml-avro:v1.8.2
+    - name: Push the Docker image
+      run: docker push selamanse/xml-avro:v1.8.2
