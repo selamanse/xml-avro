@@ -1,13 +1,10 @@
-FROM gradle:6.3.0 AS build
+FROM gradle:6-jdk8 AS build
 ARG VERSION
 ENV VERSION ${VERSION:-1.8.2}
 
-RUN cd /tmp && \
-    wget https://github.com/GeethanadhP/xml-avro/archive/${VERSION}.zip && \
-    unzip ${VERSION}.zip && \
-    cp -a /tmp/xml-avro-${VERSION}/* /home/gradle/ && \
-    sed -i 's/http:/https:/g' /home/gradle/build.gradle && \
-    chown -R gradle:gradle /home/gradle
+COPY . /home/gradle
+
+RUN chown -R gradle:gradle /home/gradle
 
 
 WORKDIR /home/gradle
