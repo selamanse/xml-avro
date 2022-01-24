@@ -10,16 +10,13 @@
         "name" : "BookForm",
         "fields" : [ {
           "name" : "author",
-          "type" : "string",
-          "source" : "element author"
+          "type" : "string"
         }, {
           "name" : "title",
-          "type" : "string",
-          "source" : "element title"
+          "type" : "string"
         }, {
           "name" : "genre",
-          "type" : "string",
-          "source" : "element genre"
+          "type" : "string"
         }, {
           "name" : "price",
           "type" : [ "null", {
@@ -29,23 +26,19 @@
               "name" : "PriceType",
               "fields" : [ {
                 "name" : "text_value",
-                "type" : [ "null", "double" ],
-                "source" : "element text_value"
+                "type" : [ "null", "double" ]
               }, {
                 "name" : "_currency",
                 "type" : [ "null", "string" ],
-                "default" : null,
-                "source" : "attribute currency"
+                "default" : null
               } ]
             }
           } ],
-          "default" : null,
-          "source" : "element price"
+          "default" : null
         }, {
           "name" : "pub_date",
           "type" : [ "null", "string" ],
-          "default" : null,
-          "source" : "element pub_date"
+          "default" : null
         }, {
           "name" : "review",
           "type" : [ "null", {
@@ -55,18 +48,15 @@
               "name" : "ReviewType",
               "fields" : [ {
                 "name" : "title",
-                "type" : "string",
-                "source" : "element title"
+                "type" : "string"
               }, {
                 "name" : "content",
                 "type" : [ "null", "string" ],
-                "default" : null,
-                "source" : "element content"
+                "default" : null
               } ]
             }
           } ],
-          "default" : null,
-          "source" : "element review"
+          "default" : null
         }, {
           "name" : "type0",
           "type" : {
@@ -81,19 +71,16 @@
                   "name" : "AliasType",
                   "fields" : [ {
                     "name" : "title",
-                    "type" : "string",
-                    "source" : "element title"
+                    "type" : "string"
                   }, {
                     "name" : "language",
                     "type" : [ "null", {
                       "type" : "array",
                       "items" : "string"
                     } ],
-                    "default" : null,
-                    "source" : "element language"
+                    "default" : null
                   } ]
-                },
-                "source" : "element alias"
+                }
               }, {
                 "name" : "website",
                 "type" : {
@@ -105,11 +92,9 @@
                       "type" : "array",
                       "items" : "string"
                     } ],
-                    "default" : null,
-                    "source" : "element url"
+                    "default" : null
                   } ]
-                },
-                "source" : "element website"
+                }
               } ]
             }
           }
@@ -119,8 +104,7 @@
             "type" : "array",
             "items" : "string"
           } ],
-          "default" : null,
-          "source" : "element sold"
+          "default" : null
         }, {
           "name" : "others",
           "type" : {
@@ -130,11 +114,9 @@
         }, {
           "name" : "_id",
           "type" : [ "null", "string" ],
-          "default" : null,
-          "source" : "attribute id"
+          "default" : null
         } ]
       }
-    },
-    "source" : "element book"
+    }
   } ]
 }

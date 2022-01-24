@@ -99,12 +99,12 @@ final class SchemaBuilder(config: XSDConfig) {
             record).asJava
           val field =
             new Field(validName(ele.getName).get, optionalSchema, null, null)
-          field.addProp(XNode.SOURCE, XNode(ele).source)
+          //field.addProp(XNode.SOURCE, XNode(ele).source)
           fields += field
         }
         val record = Schema.createRecord(generateTypeName, null, null, false)
         record.setFields(fields.asJava)
-        record.addProp(XNode.SOURCE, XNode.DOCUMENT: Any)
+        //record.addProp(XNode.SOURCE, XNode.DOCUMENT: Any)
         record
       }
     }
@@ -236,7 +236,7 @@ final class SchemaBuilder(config: XSDConfig) {
       val fieldSchema =
         processType(extnType.getBaseType, optional = true, array = false)
       val field = new Field(XNode.TEXT_VALUE, fieldSchema, null, null)
-      field.addProp(XNode.SOURCE, XNode.textNode.source)
+      //field.addProp(XNode.SOURCE, XNode.textNode.source)
       fields += (field.name() -> field)
     }
     fields
@@ -313,7 +313,7 @@ final class SchemaBuilder(config: XSDConfig) {
         val field: Field =
           new Field(fieldName, fieldSchema, null, defaultValue)
 
-        field.addProp(XNode.SOURCE, XNode(ele, attribute).source)
+        //field.addProp(XNode.SOURCE, XNode(ele, attribute).source)
 
         if (eleType.getTypeCategory == SIMPLE_TYPE) {
           val tempType =
@@ -371,6 +371,7 @@ final class SchemaBuilder(config: XSDConfig) {
           }
         }
         var finalName = new String(result, 0, p)
+        finalName = finalName.replace("AnonType_", "")
 
         try {
           // handle built-in types
